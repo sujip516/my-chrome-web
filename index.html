@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>My room</title>
+  </head>
+  <body>
+    <span id="clock"></span>
+    <div>
+      <form id="login-form">
+        <input
+          id="login-input"
+          required
+          type="text"
+          placeholder="Please write your name!"
+          maxlength="6"
+          value=""
+        />
+        <button id="login-button">Enter</button>
+      </form>
+      <span id="login-name"></span>
+    </div>
+
+    <div id="todo-list">
+      <form id="todo-form">
+        <input id="todo-input" type="text" />
+      </form>
+    </div>
+
+    <span id="quote"></span>
+
+    <script src="js/login.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/todolist.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/image.js"></script>
+  </body>
+</html>
