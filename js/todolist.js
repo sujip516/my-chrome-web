@@ -2,7 +2,7 @@
 const todoForm = document.querySelector("#todo-form");
 const todoInput = document.querySelector("#todo-input");
 const todoUl = document.querySelector("#todo-ul");
-const image = ["7.png"];
+const image = ["9.png"];
 
 // li와 btnImg 생성 및 btnImg click 시, li remove function 선언.
 function addList(text) {
