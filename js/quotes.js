@@ -6,6 +6,7 @@ const quotes = [
   "Focus!",
   "Don't put today's work off until tomorrow!",
 ];
+
 const quote = document.querySelector("#quote");
 
 function handleQuotes() {

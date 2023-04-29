@@ -8,30 +8,36 @@
     <title>My room</title>
   </head>
   <body>
-    <span id="clock"></span>
+    <h2 id="clock"></h2>
 
     <div>
-      <form id="login-form">
+      <form class="hidden" id="login-form">
         <input
-          id="login-input"
           required
           type="text"
-          placeholder="Please write your name!"
+          placeholder="What is your name?"
           maxlength="6"
-          value=""
         />
         <button id="login-button">Enter</button>
       </form>
-      <span id="login-name"></span>
     </div>
+    <h1 class="hidden" id="login-name"></h1>
 
     <form id="todo-form">
-      <input id="todo-input" type="text" />
+      <input
+        id="todo-input"
+        type="text"
+        placeholder="Write a To Do and Press Enter!"
+      />
     </form>
     <ul id="todo-ul"></ul>
 
     <span id="quote"></span>
 
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/weather.js"></script>

@@ -1,21 +1,32 @@
-// 사용할 html tag variable 정의.
 const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-input");
+const loginInput = document.querySelector("#login-form input");
 const loginName = document.querySelector("#login-name");
 
-// loginForm submit 시, 호출할 function 선언.
-function handleLogin(submit) {
-  // submit 시, 새로고침 방지
-  submit.preventDefault();
-  // localStorage에 username 저장.
-  localStorage.setItem("username", JSON.stringify(loginInput.value));
-  // login 시, input "hidden" class 추가.
-  loginForm.classList.add("hidden");
-  // 저장한 username variable로 불러오기.
-  const userName = JSON.parse(localStorage.getItem("username"));
-  // login 시, 저장한 username 출력.
-  loginName.innerText = `${userName}`;
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function loginSubmit(event) {
+  event.preventDefault();
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  paintUsername(username);
 }
 
-// loginForm event listen.
-loginForm.addEventListener("submit", handleLogin);
+function paintUsername(username) {
+  loginName.innerText = `${username}`;
+  loginName.classList.remove(HIDDEN_CLASSNAME);
+}
+
+loginForm.addEventListener("submit", loginSubmit);
+// username 저장, loginInput add "hidden", loginName remove "hidden".
+// refresh -> username gone!
+
+const getUsername = localStorage.getItem(USERNAME_KEY);
+
+if (getUsername === null) {
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", loginSubmit);
+} else {
+  paintUsername(getUsername);
+}

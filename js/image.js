@@ -4,4 +4,3 @@ const bgImg = document.createElement("img");
 
 bgImg.src = `img/${randomImg}`;
 document.body.appendChild(bgImg);
-bgImg.classList.add("bgimg");
