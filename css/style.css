@@ -37,7 +37,7 @@ img {
 #clock {
   font-size: 130px;
   position: absolute;
-  top: 170px;
+  top: 180px;
   left: 500px;
 }
 
@@ -165,4 +165,25 @@ img {
   bottom: 24px;
   left: 340px;
   color: peru;
+}
+
+#screen-size {
+  position: absolute;
+  z-index: 99;
+  height: 100vh;
+  width: 100vw;
+  background-color: powderblue;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: tomato;
+}
+
+@media screen and (max-width: 1440px) {
+  #screen-size {
+    display: none;
+  }
 }
